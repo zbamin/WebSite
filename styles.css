@@ -1,0 +1,103 @@
+/* styles.css */
+
+.centered-text {
+  text-align: center;
+}
+
+
+/*------- 배경 화면 및 사이즈 -------- */
+
+html,
+body {
+    height: 200vh;
+    margin: 0;
+    padding: 0;
+}
+
+.first-background {
+  background-image: url('BG.jpg');
+  background-size: cover; /* 배경 이미지를 화면에 맞게 조절 */
+  background-position: center;
+  background-attachment: scroll; /* 배경 이미지가 스크롤되지 않고 고정 */
+  height: 100vh;
+}
+
+
+.content {
+    height: calc(100% - 50px);
+    overflow-y: auto;
+    padding-top: 50px;
+}
+
+/* 다음 배경 이미지 */
+.second-background {
+    background-image: url('BG2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    height: 100vh; /* 배경 이미지의 높이를 화면의 높이와 동일하게 설정 */
+    margin-top: 100vh; /* 다음 배경 이미지의 위치를 현재 배경 이미지의 아래에 배치 */
+}
+
+.content {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+  padding-top: 50px;
+}
+
+/*------- 배경 화면 및 사이즈 -------- */
+
+
+/* -------- [패널] ----------- */
+
+
+
+#panel-bar {
+  position: fixed;
+  top: -50px; /* 초기에 숨김 */
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  transition: top 0.3s; /* 스크롤 시 부드러운 애니메이션을 위한 트랜지션 설정 */
+  display: flex; /* 섹션들을 가로로 정렬하기 위해 flex 사용 */
+  justify-content: center; /* 가로로 정렬된 섹션들을 중앙에 위치시키기 위해 */
+  align-items: center; /* 세로로 정렬된 섹션들을 중앙에 위치시키기 위해 */
+}
+
+#panel-bar nav ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+#panel-bar nav ul li {
+display: inline;
+margin-right: 20px; /* 각 섹션들 사이의 간격 설정 */
+}
+
+#panel-bar nav ul li:last-child {
+margin-right: 0; /* 마지막 섹션 뒤에 여백을 없앰 */
+}
+
+#panel-bar nav ul li a {
+color: white;
+text-decoration: none;
+}
+
+.content {
+/* 다른 콘텐츠의 상단 여백을 패널 바가 나타날 때 방지하기 위해 추가 */
+margin-top: 50px;
+height: calc(100% - 50px); /* 패널 바의 높이를 제외한 영역을 차지하도록 설정 */
+overflow-y: auto; /* 내용이 넘치는 경우 스크롤 표시 */
+padding-top: 50px; /* 패널 바의 높이만큼 상단 여백 추가 */
+}
+
+.hidden {
+visibility: hidden;
+}
+
+/* --------- [패널] ----------- */
