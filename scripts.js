@@ -19,4 +19,18 @@ function MyFunction(num) {
 window.FuncNum = function(data) {
     // 받은 데이터를 HTML에 표시합니다.
     document.getElementById("receivedData").innerText = "받은 데이터: " + data;
+
+
+    
+};
+
+// 페이지 로딩 시 데이터를 받아 처리하는 함수
+window.onload = function() 
+{
+    // URL에서 데이터를 추출합니다.
+    var urlParams = new URLSearchParams(window.location.search);
+    var data = urlParams.get('data');
+    
+    // 받은 데이터를 HTML에 표시합니다.
+    document.getElementById("receivedData").innerText = "받은 데이터: " + data;
 };
