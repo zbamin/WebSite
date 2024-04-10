@@ -15,30 +15,3 @@ function MyFunction(num) {
     document.body.appendChild(newElement);
 }
 
-const http = require('http');
-const querystring = require('querystring');
-
-const server = http.createServer((req, res) => {
-    if (req.method === 'POST') {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            const postData = querystring.parse(body);
-            console.log("Received data:", postData.data);
-
-            // 여기에서 받은 데이터를 처리하고 응답을 보낼 수 있습니다.
-            res.writeHead(200, { 'Content-Type': 'text/plain' });
-            res.end('Data received successfully!\n');
-        });
-    } else {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('404 Not Found\n');
-    }
-});
-
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});

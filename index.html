@@ -41,45 +41,6 @@
         </div>
         
     </div>
-
-    <h2>데이터를 전송할 폼</h2>
-
-    <form id="dataForm">
-        <label for="data">데이터:</label><br>
-        <input type="text" id="data" name="data"><br><br>
-        <button type="button" onclick="postData()">전송</button>
-    </form>
-    
-    <script>
-    function postData() {
-        var data = document.getElementById('data').value;
-    
-        // 데이터를 JSON 형태로 생성
-        var jsonData = {
-            data: data
-        };
-    
-        // POST 요청 보내기
-        fetch('http://localhost:3000/receiveData', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(jsonData)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            console.log('Data sent successfully!');
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-    }
-    </script>
-    
-
   </div>
 
    <!-- 두 번째 배경 화면 -->
