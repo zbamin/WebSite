@@ -15,3 +15,8 @@ function MyFunction(num) {
     document.body.appendChild(newElement);
 }
 
+// 데이터를 받는 함수 정의
+window.FuncNum = function(data) {
+    // 받은 데이터를 HTML에 표시합니다.
+    document.getElementById("receivedData").innerText = "받은 데이터: " + data;
+};
