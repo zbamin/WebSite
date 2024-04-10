@@ -40,6 +40,24 @@
         
         </div>
         
+        <h2>받은 데이터:</h2>
+        <p id="receivedData"></p>
+    
+        <script>
+            // POST 요청을 받아 처리하는 함수
+            function receiveData() {
+                // POST 요청으로 받은 데이터를 추출합니다.
+                var receivedData = JSON.parse(decodeURIComponent(window.location.search.substr(1)).replace("data=", ""));
+    
+                // 받은 데이터를 HTML에 표시합니다.
+                document.getElementById("receivedData").innerHTML = "받은 데이터: " + receivedData.number;
+            }
+    
+            // 페이지 로딩 시 데이터를 받아 처리합니다.
+            window.onload = receiveData;
+        </script>
+    
+
     </div>
   </div>
 
