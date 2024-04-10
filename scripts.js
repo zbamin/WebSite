@@ -30,5 +30,5 @@ window.onload = function()
     var data = urlParams.get('data');
     
     // 받은 데이터를 HTML에 표시합니다.
-    document.getElementById("receivedData").innerText = "받은 데이터: " + data;
+    document.getElementById("receivedData").innerText = "받은 데이터 : " + data;
 };
