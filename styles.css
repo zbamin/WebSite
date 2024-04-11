@@ -15,7 +15,7 @@ body {
 }
 
 .first-background {
-  background-image: url('BG.jpg');
+  background-image: url('BG.png');
   background-size: cover; /* 배경 이미지를 화면에 맞게 조절 */
   background-position: center;
   background-attachment: scroll; /* 배경 이미지가 스크롤되지 않고 고정 */
